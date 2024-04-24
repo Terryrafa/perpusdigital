@@ -39,33 +39,6 @@ if ($_SESSION['user']['level'] != 'peminjam') {
                     </div>
                 </div>
             </form>
-            <?php
-                if (isset($_POST['submit'])) {
-                    mysqli_error($koneksi);
-                    $id_kategori = $_POST['id_kategori'];
-                    $judul = $_POST['judul'];
-                    $penulis =$_POST['penulis'];
-                    $penerbit = $_POST['penerbit'];
-                    $tahun_terbit = $_POST['tahun_terbit'];
-                    $deskripsi = $_POST['deskripsi'];
-
-                    $foto = $_FILES['foto']['name'];
-                    $tmp = $_FILES['foto']['tmp_name'];
-
-                    $lokasi = 'assets/';
-                    $nama_foto = rand(0, 999) . '-' . $foto;
-
-                    move_uploaded_file($tmp, $lokasi . $nama_foto);
-
-                    $query = mysqli_query($koneksi, "INSERT INTO buku(id_kategori,judul,penulis,penerbit,tahun_terbit,deskripsi,foto) values('$id_kategori','$judul','$penulis','$penerbit','$tahun_terbit','$deskripsi','$nama_foto')");
-
-                    if ($query) {
-                        echo '<script>alert("data berhasil tersimpan");  </script>';
-                    } else {
-                        echo '<script>alert("data gagal");  </script>';
-                    }
-                }
-                ?>
         </div>
     </div>
 </div>
@@ -73,5 +46,6 @@ if ($_SESSION['user']['level'] != 'peminjam') {
 <?php
 }else {
     session_destroy();
+    header('location:login.php');
 }
 ?>

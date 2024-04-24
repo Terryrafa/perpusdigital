@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-12 ml-[19.5rem] gap-4 mb-3">
+                <div class="grid grid-cols-1 md:grid-cols-12 ml-[13rem] gap-4 mb-3">
                     <div class="col-span-8 flex justify-start items-center space-x-4">
                         <button type="submit"
                             class=" duration-300 ease-in-out bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-2"
@@ -80,6 +80,9 @@
                             class=" duration-300 ease-in-out bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2">Reset</button>
                         <a href="?page=review"
                             class=" duration-300 ease-in-out bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">Back</a>
+                            <a onclick="return confirm('please confirm your action');"
+                                    href="?page=delete_review&&id=<?php echo $data['id_ulasan']; ?>"
+                                    class="btn bg-red-500 hover:bg-white hover:text-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded  duration-300 ease-in-out">Delete</a>
                     </div>
                 </div>
             </form>

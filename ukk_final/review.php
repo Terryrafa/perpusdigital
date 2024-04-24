@@ -59,9 +59,6 @@
                             <td class="border border-gray-300 px-4 py-4">
                                 <a href="?page=edit_review&&id=<?php echo $data['id_ulasan']; ?>"
                                     class="btn bg-blue-500 hover:bg-white hover:text-blue-500 text-white font-bold py-2 px-4 rounded duration-300 ease-in-out">Edit</a>
-                                <a onclick="return confirm('please confirm your action');"
-                                    href="?page=delete_review&&id=<?php echo $data['id_ulasan']; ?>"
-                                    class="btn bg-red-500 hover:bg-white hover:text-red-700 hover:bg-red-700 text-white font-bold py-2 px-4 rounded  duration-300 ease-in-out">Delete</a>
                             </td>
                         </tr>
                         <?php

@@ -37,7 +37,9 @@
                 </div>
 
                 <!-- Box Button 4 -->
-
+                <?php
+                if ($_SESSION['user']['level'] == 'admin') {
+                ?>
                 <div
                     class="bg-white shadow-md p-4 rounded-lg cursor-pointer transition duration-300 transform hover:scale-105">
                     <h3 class="text-lg font-semibold mb-2">Total User</h3>
@@ -46,6 +48,9 @@
                     </p>
                     <a href="?page=users" class="text-blue-500 hover:text-blue-700">View Details</a>
                 </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
 
